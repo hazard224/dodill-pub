@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: #1a2a6c;
+    background: -webkit-linear-gradient(to bottom, #fdbb2d, #b21f1f, #1a2a6c);
+    background: linear-gradient(to bottom, #fdbb2d, #b21f1f, #1a2a6c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header {
+    text-align: center;
+    color: white;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 600;
+    margin-bottom: 5px;
+    letter-spacing: 0.2rem;
+    text-transform: lowercase;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    font-family: 'Geist Mono', 'Courier New', monospace;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-weight: 700;
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    letter-spacing: 0.05rem;
+    opacity: 0.95;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.project-card {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 15px;
+    padding: 25px 35px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.project-card.image-grid:hover {
+    background: rgba(253, 187, 45, 0.3);
+    border-color: rgba(253, 187, 45, 0.6);
+}
+
+.project-card.dodill:hover {
+    background: rgba(26, 42, 108, 0.4);
+    border-color: rgba(178, 31, 31, 0.6);
+}
+
+.project-card.color-palette:hover {
+    background: rgba(178, 31, 31, 0.35);
+    border-color: rgba(253, 187, 45, 0.5);
+}
+.project-card.dodill {
+    background: rgba(26, 42, 108, 0.3);
+    border-color: rgba(178, 31, 31, 0.4);
+}
+
+.project-card.color-palette {
+    background: rgba(178, 31, 31, 0.25);
+    border-color: rgba(253, 187, 45, 0.3);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.project-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+    text-align: center;
+    font-family: 'Geist Mono', 'Courier New', monospace;
+}
+
+.project-description {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.launch-btn {
+    display: block;
+    padding: 20px 35px;
+    margin: 0 -35px;
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 15px 15px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1rem;
+    font-family: 'Geist Mono', 'Courier New', monospace;
+    text-decoration: none;
+}
+
+.launch-btn:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+    .projects {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .project-card {
+        padding: 30px 25px 0;
+    }
+
+    .launch-btn {
+        margin: 0 -25px;
+    }
+
+    header {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+    }
+
+    .project-title {
+        font-size: 1.6rem;
+    }
+
+    .project-card {
+        padding: 25px 20px 0;
+    }
+
+    .launch-btn {
+        margin: 0 -20px;
+    }
+}
+
+/* Cookie Banner */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.cookie-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cookie-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin: 0;
+    flex: 1;
+    min-width: 250px;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.cookie-btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Geist Mono', 'Courier New', monospace;
+}
+
+.cookie-btn.accept {
+    background: linear-gradient(135deg, #fdbb2d, #b21f1f);
+    color: white;
+}
+
+.cookie-btn.accept:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(253, 187, 45, 0.4);
+}
+
+.cookie-btn.decline {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.cookie-btn.decline:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 600px) {
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookie-buttons {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .cookie-btn {
+        flex: 1;
+    }
+}

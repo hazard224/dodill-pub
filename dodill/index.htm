@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative tools and utilities - Image Grid Tool and DODILL prompt generator">
+    <title>Creative Tools Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <script>
+        // Cookie consent and Google Analytics loader
+        function initGoogleAnalytics() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Z7GDFC656N';
+            document.head.appendChild(script);
+            
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Z7GDFC656N');
+        }
+
+        function checkConsent() {
+            const consent = localStorage.getItem('cookieConsent');
+            if (consent === 'accepted') {
+                initGoogleAnalytics();
+            } else if (consent === null) {
+                // Show banner on first visit
+                document.addEventListener('DOMContentLoaded', () => {
+                    document.getElementById('cookieBanner').style.display = 'flex';
+                });
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').style.display = 'none';
+            initGoogleAnalytics();
+        }
+
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        checkConsent();
+    </script>
+</head>
+<body>
+    <div id="cookieBanner" class="cookie-banner">
+        <div class="cookie-content">
+            <p class="cookie-text">We use Google Analytics to understand how visitors use our site. This data is shared with Google. <a href="privacy.htm" style="color: #fdbb2d; text-decoration: underline;">Privacy Policy</a></p>
+            <div class="cookie-buttons">
+                <button onclick="acceptCookies()" class="cookie-btn accept">Accept</button>
+                <button onclick="declineCookies()" class="cookie-btn decline">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>
+            <h1>dodill</h1>
+            <p class="subtitle">Tools for Artists</p>
+        </header>
+
+        <div class="projects">
+            <a href="Image-grid/image-grid.htm" class="project-card image-grid">
+                <h2 class="project-title">Grid Tool</h2>
+                <p class="project-description">
+                    Add precise grid overlays to your images with custom layouts and DPI settings.
+                </p>
+                <span class="launch-btn">Launch Tool →</span>
+            </a>
+
+            <a href="Prompt-maker/creative-spark.htm" class="project-card dodill">
+                <h2 class="project-title">Creative Spark</h2>
+                <p class="project-description">
+                    Creative two-word prompts to spark inspiration and break through creative blocks.
+                </p>
+                <span class="launch-btn">Get Inspired →</span>
+            </a>
+
+            <a href="Color-palette/palette-maker.htm" class="project-card color-palette">
+                <h2 class="project-title">Palette Maker</h2>
+                <p class="project-description">
+                    Generate beautiful color palettes from an image or random selection.
+                </p>
+                <span class="launch-btn">Create Palette →</span>
+            </a>
+        </div>
+
+        <footer>
+            <p>© 2026 dodill. All Rights Reserved. | <a href="privacy.htm" style="color: rgba(255, 255, 255, 0.8); text-decoration: underline;">Privacy Policy</a></p>
+        </footer>
+    </div>
+</body>
+</html>

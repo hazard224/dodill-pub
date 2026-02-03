@@ -1,0 +1,213 @@
+html {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+  body {
+    color: ghostwhite;
+    font-family: Arial, sans-serif;
+    font-size: 1em;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+  }
+  #BG{
+      height: 100vh;
+      padding: 0;
+
+  }
+  .results {
+    align-items: center;
+    display: flex;
+    height: 80vh;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    flex-direction: column;
+  }
+  .desc,
+  .noun {
+    font-size: 5em;
+    padding: 0.3em;
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 90vw;
+  }
+  
+  @media (max-width: 768px) {
+    .desc,
+    .noun {
+      font-size: clamp(2.5rem, 10vw, 5rem);
+      padding: 0.2em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .desc,
+    .noun {
+      font-size: clamp(2rem, 12vw, 4rem);
+      padding: 0.15em;
+    }
+  }
+  
+  button {
+    background-color: #00000066;
+    border: none;
+    bottom: 0px;
+    cursor: pointer;
+    height: 15vh;
+    min-height: 60px;
+    margin-left: -50%;
+    position: fixed;
+    outline: none;
+    width: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  button:active,
+  button:focus,
+  button:hover {
+    background-color: #00000099;
+    border: none;
+    outline: none;
+  }
+  button span {
+    color: ghostwhite;
+    font-size: 8vh;
+    font-weight: bold;
+    transform: rotate(90deg);
+  }
+  header {
+    color: #00000066;
+    font-weight: 300;
+    font-size: 3vh;
+    letter-spacing: 0.2rem;
+    padding-top: 2vh;
+    text-transform: uppercase;
+    text-align: center;
+    
+  }
+  .home-link {
+    position: absolute;
+    top: 2vh;
+    left: 2vh;
+    padding: 10px;
+    color: #00000066;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 2vh;
+    transition: all 0.3s ease;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.3);
+  }
+  .home-link:hover {
+    color: #000000cc;
+    background: rgba(255, 255, 255, 0.5);
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+  .info-link {
+    position: fixed;
+    top: 2vh;
+    right: 2vh;
+    padding: 0;
+    color: #00000066;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 3vh;
+    transition: all 0.3s ease;
+    z-index: 100;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .info-link:hover {
+    color: #000000cc;
+    background-color: #00000022;
+  }
+  a{
+    text-decoration: none;
+  }
+  .copyright a {
+    color: #00000099;
+  }
+  .copyright {
+    color: #00000099;
+    font-size: 0.7em;
+    margin-top: 4vh;
+    opacity: 0.5;
+    width: 100%;
+  }
+  /** LIGHTBOX MARKUP **/
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Unhide the lightbox when it's the target */
+.lightbox:target {
+  display: flex;
+}
+
+.lightbox-content {
+  background: #222;
+  color: whitesmoke;
+  font-size: 3vh;
+  line-height: 1.6em;
+  text-align: left;
+  padding: 2em;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.lightbox-content h2 {
+  text-align: center;
+  margin: 0 0 1em 0;
+}
+
+.lightbox-content .close-btn {
+  margin-top: 1.5em;
+  cursor: pointer;
+}
+
+.lightbox-content ul {
+  margin: 1em 0;
+  padding-left: 2em;
+}
+
+.lightbox-content li {
+  margin: 0.5em 0;
+}
+
+@media (max-width: 480px) {
+  .lightbox {
+    padding: 10px;
+  }
+  .lightbox-content {
+    font-size: 2.5vh;
+    padding: 1.5em;
+  }
+}

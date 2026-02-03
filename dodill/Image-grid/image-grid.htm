@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Add precise grid overlays to your images with custom layouts and DPI settings. Professional image grid tool for artists and designers.">
+    <title>Image Grid Tool</title>
+    <link rel="stylesheet" href="image-grid.css">
+</head>
+<body>
+    <div class="container">
+        <a href="../index.htm" class="home-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+        </a>
+        <h1>Image Grid Tool</h1>
+        
+        <div class="controls">
+            <div class="upload-section">
+                <label for="imageUpload" class="upload-btn">
+                    <i class="fas fa-upload"></i> Upload Image
+                </label>
+                <input type="file" id="imageUpload" accept="image/*" hidden>
+                <p id="fileName" class="file-name"></p>
+            </div>
+
+            <div class="settings-section">
+                <div class="setting-category">
+                    <h3>Canvas Settings</h3>
+                    <div class="setting-group">
+                        <label>Width (in):</label>
+                        <input type="number" id="canvasWidth" min="1" max="100" step="0.1" value="10">
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Height (in):</label>
+                        <input type="number" id="canvasHeight" min="1" max="100" step="0.1" value="10">
+                    </div>
+
+                    <div class="setting-group">
+                        <label>DPI:</label>
+                        <input type="number" id="dpi" min="72" max="600" value="300">
+                    </div>
+                </div>
+
+                <div class="setting-category">
+                    <h3>Image Size</h3>
+                    <div class="setting-group">
+                        <label>Width (px):</label>
+                        <input type="number" id="imageWidth" min="100" max="4000" value="800">
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Height (px):</label>
+                        <input type="number" id="imageHeight" min="100" max="4000" value="600">
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" id="maintainAspect" checked>
+                            Maintain Aspect Ratio
+                        </label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" id="fitToCanvas">
+                            Fit Image to Canvas
+                        </label>
+                    </div>
+                </div>
+
+                <div class="setting-category">
+                    <h3>Image Position</h3>
+                    <div class="setting-group">
+                        <label>X Position (px):</label>
+                        <input type="number" id="imageX" value="0">
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Y Position (px):</label>
+                        <input type="number" id="imageY" value="0">
+                    </div>
+                </div>
+
+                <div class="setting-category">
+                    <h3>Grid Layout</h3>
+                    <div class="setting-group">
+                        <label>Columns:</label>
+                        <input type="number" id="gridColumns" min="1" max="50" value="5">
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Rows:</label>
+                        <input type="number" id="gridRows" min="1" max="50" value="5">
+                    </div>
+                </div>
+
+                <div class="setting-category">
+                    <h3>Grid Appearance</h3>
+                    <div class="setting-group">
+                        <label>Color:</label>
+                        <div class="color-select-wrapper">
+                            <div class="color-preview" id="colorPreview"></div>
+                            <select id="gridColor">
+                                <option value="#ffffff">White</option>
+                                <option value="#000000" selected>Black</option>
+                                <option value="#ff0000">Red</option>
+                                <option value="#ff8800">Orange</option>
+                                <option value="#ffff00">Yellow</option>
+                                <option value="#88ff00">Lime</option>
+                                <option value="#00ff00">Green</option>
+                                <option value="#00ff88">Teal</option>
+                                <option value="#00ffff">Cyan</option>
+                                <option value="#0088ff">Sky Blue</option>
+                                <option value="#0000ff">Blue</option>
+                                <option value="#8800ff">Purple</option>
+                                <option value="#ff00ff">Magenta</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="setting-group">
+                        <label>Width (px):</label>
+                        <input type="number" id="lineWidth" min="1" max="10" value="2">
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="applyBtn" class="btn btn-primary" disabled>
+                    <i class="fas fa-check"></i> Apply Changes
+                </button>
+                <button id="saveBtn" class="btn btn-success" disabled>
+                    <i class="fas fa-download"></i> Save Image
+                </button>
+                <button id="resetBtn" class="btn btn-secondary" disabled>
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+            </div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="canvas"></canvas>
+        </div>
+
+        <div class="info-section">
+            <p id="imageInfo"></p>
+        </div>
+    </div>
+
+    <script src="image-grid.js"></script>
+</body>
+</html>
